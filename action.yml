@@ -14,6 +14,10 @@ inputs:
     description: 'email for the commit'
     required: true
     
+  target-directory:
+    description: 'directory path from repository root'
+    required: true
+    
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -22,6 +26,7 @@ runs:
     - ${{ inputs.destination-username }}
     - ${{ inputs.destination-repository }}
     - ${{ inputs.user-email }}
+    - ${{ inputs.target-directory }}
   env:
     GH_DEPLOY_TOKEN: ${{ secrets.GH_DEPLOY_TOKEN }}
   
