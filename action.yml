@@ -21,12 +21,13 @@ inputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  env:
+    GH_DEPLOY_TOKEN: ${{ secrets.GH_DEPLOY_TOKEN }}
   args:
     - ${{ inputs.upload-file }}
     - ${{ inputs.destination-username }}
     - ${{ inputs.destination-repository }}
     - ${{ inputs.user-email }}
     - ${{ inputs.target-directory }}
-  env:
-    GH_DEPLOY_TOKEN: ${{ secrets.GH_DEPLOY_TOKEN }}
+  
   
