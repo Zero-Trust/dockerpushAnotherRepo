@@ -23,13 +23,16 @@ git config --local pull.rebase false
 git config --local user.name "${GITHUB_USERNAME}"
 git config --local user.email "${USER_EMAIL}"
 git checkout master
+
+origin="https://${GITHUB_ACTOR}:${GH_DEPLOY_TOKEN}@github.com/${GITHUB_USERNAME}/${GITHUB_REPO}.git"
+git pull $origin master
 # ==================================
 
 mkdir -p "${TARGETDIR}"
 
 
 # Get file =========================
-touch "${TARGETDIR}/${UPLOAD_FILE}"
+touch "./${UPLOAD_FILE}"
 cat > "./${UPLOAD_FILE}" << EOF
 <html>
 <head>
@@ -44,10 +47,9 @@ EOF
 mv "./${UPLOAD_FILE}" "${TARGETDIR}/${UPLOAD_FILE}"
 # ==================================
 
+
 # Commit to Another Repository =====
-origin="https://${GITHUB_ACTOR}:${GH_DEPLOY_TOKEN}@github.com/${GITHUB_USERNAME}/${GITHUB_REPO}.git"
 echo ${PWD}
-git pull $origin master
 git add .
 git commit -m "Deploy ${GITHUB_SHA} by GitHub Actions"
 git push $origin master
