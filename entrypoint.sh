@@ -23,7 +23,6 @@ fi
 
 # Setup Git Repository =============
 git clone ${HTTPS_REMORE}
-ls -la .
 # git submodule add ${HTTPS_REMORE}
 cd ${GITHUB_REPO}/
 git config --local pull.rebase false
@@ -38,9 +37,6 @@ git pull $origin master
 
 # Put file =========================
 mkdir -p "${TARGETDIR}"
-echo "---------------"
-ls -lha ../
-echo "---------------"
 mv ../${UPLOAD_FILE} "${TARGETDIR}/${UPLOAD_FILE}"
 # ==================================
 
