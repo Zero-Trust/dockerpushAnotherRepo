@@ -35,23 +35,10 @@ origin="https://${GITHUB_ACTOR}:${GH_DEPLOY_TOKEN}@github.com/${GITHUB_USERNAME}
 git pull $origin master
 # ==================================
 
+
+# Put file =========================
 mkdir -p "${TARGETDIR}"
-
-
-# Get file =========================
-# touch "./${UPLOAD_FILE}"
-# cat > "./${UPLOAD_FILE}" << EOF
-# <html>
-# <head>
-# <title>Document</title>
-# </head>
-# <body>
-# This is test.
-# </body>
-# </html>
-# EOF
-
-mv "./${UPLOAD_FILE}" "${TARGETDIR}/${UPLOAD_FILE}"
+mv ../${UPLOAD_FILE} "${TARGETDIR}/${UPLOAD_FILE}"
 # ==================================
 
 
