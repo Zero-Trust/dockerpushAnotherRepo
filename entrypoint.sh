@@ -38,6 +38,9 @@ git pull $origin master
 
 # Put file =========================
 mkdir -p "${TARGETDIR}"
+echo "---------------"
+ls -lha ../
+echo "---------------"
 mv ../${UPLOAD_FILE} "${TARGETDIR}/${UPLOAD_FILE}"
 # ==================================
 
