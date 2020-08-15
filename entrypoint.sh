@@ -16,7 +16,7 @@ HTTPS_REMORE="https://github.com/${GITHUB_USERNAME}/${GITHUB_REPO}.git"
 
 # check ============================
 if [[ -z "$UPLOAD_FILE" ]]; then
-  error "Input 'root_file' is missing."
+  error "Input 'upload-file' is missing."
 fi
 # ==================================
 
