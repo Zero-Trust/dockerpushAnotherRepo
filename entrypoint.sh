@@ -32,17 +32,17 @@ mkdir -p "${TARGETDIR}"
 
 
 # Get file =========================
-touch "./${UPLOAD_FILE}"
-cat > "./${UPLOAD_FILE}" << EOF
-<html>
-<head>
-<title>Document</title>
-</head>
-<body>
-This is test.
-</body>
-</html>
-EOF
+# touch "./${UPLOAD_FILE}"
+# cat > "./${UPLOAD_FILE}" << EOF
+# <html>
+# <head>
+# <title>Document</title>
+# </head>
+# <body>
+# This is test.
+# </body>
+# </html>
+# EOF
 
 mv "./${UPLOAD_FILE}" "${TARGETDIR}/${UPLOAD_FILE}"
 # ==================================
