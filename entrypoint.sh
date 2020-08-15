@@ -18,7 +18,7 @@ HTTPS_REMORE="https://github.com/${GITHUB_USERNAME}/${GITHUB_REPO}.git"
 git clone ${HTTPS_REMORE}
 ls -l .
 # git submodule add ${HTTPS_REMORE}
-cd ${GITHUB_REPO}/
+cd ${GITHUB_REPO}
 git config --local pull.rebase false
 git config --local user.name "${GITHUB_USERNAME}"
 git config --local user.email "${USER_EMAIL}"
