@@ -14,6 +14,13 @@ HTTPS_REMORE="https://github.com/${GITHUB_USERNAME}/${GITHUB_REPO}.git"
 # ==================================
 
 
+# check ============================
+if [[ -z "$UPLOAD_FILE" ]]; then
+  error "Input 'root_file' is missing."
+fi
+# ==================================
+
+
 # Setup Git Repository =============
 git clone ${HTTPS_REMORE}
 ls -la .
