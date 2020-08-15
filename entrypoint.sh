@@ -18,7 +18,7 @@ HTTPS_REMORE="https://github.com/${GITHUB_USERNAME}/${GITHUB_REPO}.git"
 git clone ${HTTPS_REMORE}
 ls -la .
 # git submodule add ${HTTPS_REMORE}
-cd ${GITHUB_REPO}
+cd ${GITHUB_REPO}/
 git config --local pull.rebase false
 git config --local user.name "${GITHUB_USERNAME}"
 git config --local user.email "${USER_EMAIL}"
@@ -46,7 +46,7 @@ mv "./${UPLOAD_FILE}" "${TARGETDIR}/${UPLOAD_FILE}"
 
 # Commit to Another Repository =====
 origin="https://${GITHUB_ACTOR}:${GH_DEPLOY_TOKEN}@github.com/${GITHUB_USERNAME}/${GITHUB_REPO}.git"
-cd ${GITHUB_REPO}/
+echo ${PWD}
 git pull $origin master
 git add .
 git commit -m "Deploy ${GITHUB_SHA} by GitHub Actions"
