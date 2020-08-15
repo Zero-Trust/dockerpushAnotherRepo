@@ -1,6 +1,9 @@
 name: 'push file to another repository'
 
 inputs:
+  deploy-token:
+    description: 'token for deployment'
+    required: true
   upload-file:
     description: 'upload file name'
     required: true
@@ -22,7 +25,7 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   env:
-    GH_DEPLOY_TOKEN: ${{ secrets.GH_DEPLOY_TOKEN }}
+    GH_DEPLOY_TOKEN: ${{ inputs.deploy-token }}
   args:
     - ${{ inputs.upload-file }}
     - ${{ inputs.destination-username }}
