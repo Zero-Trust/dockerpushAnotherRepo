@@ -56,8 +56,9 @@ git push $origin master
 
 # Clean Up =========================
 cd ..
-git submodule deinit --all
-git rm ${GITHUB_REPO}
-git rm --cached .gitmodules && rm .gitmodules
+rm -rf ${GITHUB_REPO}
+# git submodule deinit --all
+# git rm ${GITHUB_REPO}
+# git rm --cached .gitmodules && rm .gitmodules
 # ==================================
 
