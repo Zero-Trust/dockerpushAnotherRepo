@@ -1,0 +1,27 @@
+name: 'push file to another repository'
+
+inputs:
+  upload-file:
+    description: 'upload file name'
+    required: true
+  destination-username:
+    description: 'destination username'
+    required: true
+  destination-repository:
+    description: 'destination repository name'
+    required: true
+  user-email:
+    description: 'email for the commit'
+    required: true
+    
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.upload-file }}
+    - ${{ inputs.destination-username }}
+    - ${{ inputs.destination-repository }}
+    - ${{ inputs.user-email }}
+  env:
+    GH_DEPLOY_TOKEN: ${{ secrets.GH_DEPLOY_TOKEN }}
+  
